@@ -104,7 +104,8 @@ def clean_data(df):
     Q1 = df_cleaned.quantile(0.25)
     Q3 = df_cleaned.quantile(0.75)
     IQR = Q3 - Q1
-    df_cleaned = df_cleaned[~((df_cleaned < (Q1 - 1.5 * IQR)) | (df_cleaned > (Q3 + 1.5 * IQR))).any(axis=1)]
+    IQR_THRESHOLD = 3  # Use a higher value to be less strict
+    df_cleaned = df_cleaned[~((df_cleaned < (Q1 - IQR_THRESHOLD * IQR)) | (df_cleaned > (Q3 + IQR_THRESHOLD * IQR))).any(axis=1)]
     
     return df_cleaned
 
@@ -141,7 +142,6 @@ def main():
         print(cleaning_impact_analysis(df))
         
         correlation_matrix = correlation_analysis(df, ['GHI', 'DNI', 'DHI', 'TModA', 'TModB', 'WS', 'WSgust', 'WD'], output_dir)
-        plt.savefig(f'{output_dir}/correlation_matrix.png')
         
         wind_analysis(df, output_dir)
         
