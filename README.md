@@ -93,3 +93,8 @@ To further enhance this analysis, we suggest:
 
 This analysis provides MoonLight Energy Solutions with data-driven insights to guide their solar investment strategy. By focusing on high-potential areas, optimizing maintenance schedules, and considering complementary energy sources, the company can significantly enhance its operational efficiency and sustainability. The interactive dashboard we've created will allow for ongoing exploration of the data, supporting adaptive decision-making as new data becomes available.
 
+## Deployed Streamlit dashboard
+You can access the deployed Streamlit dashboard at the following URL:
+
+[Streamlit Dashboard(https://solar-10academy.streamlit.app/)
+
