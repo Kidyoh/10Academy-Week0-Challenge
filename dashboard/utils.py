@@ -5,7 +5,7 @@ from datetime import timedelta
 def load_data(country):
     """Load cleaned data for a specific country."""
     try:
-        file_path = f'./outputs/{country}/{country}_cleaned_data.csv'
+        file_path = f'../outputs/{country}/{country}_cleaned_data.csv'
         df = pd.read_csv(file_path, parse_dates=['Timestamp'])
         return df
     except Exception as e:
@@ -31,6 +31,7 @@ def create_wind_rose(df):
 
 def create_daily_pattern_plot(df):
     """Create daily pattern analysis plot."""
+    df = df.copy()
     df['Hour'] = df['Timestamp'].dt.hour
     hourly_avg = df.groupby('Hour')['GHI'].mean().reset_index()
     return px.line(hourly_avg, x='Hour', y='GHI',
