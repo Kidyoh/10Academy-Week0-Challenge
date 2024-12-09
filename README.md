@@ -47,7 +47,7 @@ Our analysis followed these key steps:
 ## Visualizations
 
 1. **Time Series Analysis**: 
-   ![Time Series of GHI](ghi_time_series.png)
+   ![Time Series of GHI](GHI_time_series.png)
    This plot shows the Global Horizontal Irradiance (GHI) over time, highlighting daily and seasonal patterns.
 
 2. **Correlation Heatmap**:
