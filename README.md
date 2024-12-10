@@ -1,95 +1,115 @@
-# Solar Radiation Analysis for MoonLight Energy Solutions
+# Solar Radiation Analysis in West Africa
 
 ## Project Overview
 
-This project aims to analyze solar radiation data from three countries (Benin, Sierra Leone, and Togo) to support MoonLight Energy Solutions in developing a strategic approach for enhancing operational efficiency and sustainability through targeted solar investments. As an Analytics Engineer, our task was to perform a comprehensive analysis of environmental measurements provided by the engineering team and translate observations into a strategic report.
+This project analyzes solar radiation data from three West African countries (Benin, Sierra Leone, and Togo) to support MoonLight Energy Solutions in developing a strategic approach for solar energy investments. Our goal is to enhance operational efficiency and sustainability through data-driven insights.
+
+## Data Sources
+
+We analyzed environmental measurements from three countries:
+- Benin
+- Sierra Leone
+- Togo
 
 ## Methodology
 
 Our analysis followed these key steps:
 
-1. **Data Loading and Cleaning**: We loaded data from three CSV files, one for each country. We performed initial data cleaning, including handling missing values and removing outliers.
-
-2. **Exploratory Data Analysis (EDA)**: We conducted a thorough EDA to understand the data distribution, identify patterns, and uncover relationships between variables.
-
-3. **Statistical Analysis**: We performed various statistical analyses to derive meaningful insights from the data.
-
-4. **Visualization**: We created multiple visualizations to represent our findings effectively.
-
-5. **Dashboard Creation**: We developed an interactive Streamlit dashboard to present our results in a user-friendly manner.
+1. **Data Loading and Cleaning**: Processed data from CSV files for each country, handling missing values and outliers.
+2. **Exploratory Data Analysis (EDA)**: Conducted thorough analysis to understand data distribution and patterns.
+3. **Statistical Analysis**: Performed various statistical tests to derive meaningful insights.
+4. **Visualization**: Created multiple visualizations to represent findings effectively.
+5. **Dashboard Creation**: Developed an interactive Streamlit dashboard for user-friendly data exploration.
 
 ## Key Findings
 
 ### 1. Solar Radiation Patterns
 
-- **Daily Patterns**: All three countries show a clear daily pattern in solar radiation, with peaks around midday and lows during night hours.
-- **Seasonal Variations**: We observed seasonal variations in solar radiation, with higher levels during summer months and lower levels during winter months.
-- **Country Comparisons**: Togo generally showed higher average solar radiation levels compared to Benin and Sierra Leone.
+- **Benin**: Highest average GHI (52.72 W/m²) and maximum GHI (143.00 W/m²)
+- **Sierra Leone**: Second highest average GHI (46.00 W/m²) and maximum GHI (127.90 W/m²)
+- **Togo**: Surprisingly low average GHI (0.84 W/m²) and maximum GHI (36.20 W/m²)
 
-### 2. Temperature and Humidity Effects
+### 2. Temperature and Humidity
 
-- There's a strong positive correlation between temperature and solar radiation (GHI, DNI, DHI).
-- Humidity shows a negative correlation with solar radiation, suggesting that higher humidity levels might reduce solar energy potential.
+- Average temperatures were similar across countries (25.54°C - 27.42°C)
+- Sierra Leone showed significantly higher humidity (83.50%) compared to Benin (61.14%) and Togo (59.82%)
 
 ### 3. Wind Patterns
 
-- Wind speed and direction vary significantly between the three countries.
-- Togo shows the most consistent wind patterns, which could be beneficial for potential wind energy projects.
+- Togo: Highest average wind speed (1.78 m/s)
+- Benin: Second highest average wind speed (1.59 m/s)
+- Sierra Leone: Lowest average wind speed (0.81 m/s)
 
-### 4. Cleaning Impact
+### 4. GHI and Temperature Correlation
 
-- Regular cleaning of solar panels (indicated by the 'Cleaning' column) shows a noticeable improvement in module efficiency (ModA and ModB readings).
+- Weak correlation in all countries
+- Benin: 0.25
+- Sierra Leone: 0.12
+- Togo: 0.03
 
-### 5. Data Quality
+### 5. Data Distribution
 
-- We identified and addressed several data quality issues, including missing values and outliers, particularly in the wind speed and solar radiation measurements.
+- No occurrences of GHI above 500 W/m² in any country
+- Varying number of data points: Togo (277,213), Sierra Leone (29,172), Benin (27,195)
 
 ## Visualizations
 
+Our analysis generated several key visualizations to help understand the data:
+
 1. **Time Series Analysis**: 
-   ![Time Series of GHI](ghi_time_series.png)
-   This plot shows the Global Horizontal Irradiance (GHI) over time, highlighting daily and seasonal patterns.
+   ![Time Series of GHI](GHI_time_series.png)
+   This plot shows the Global Horizontal Irradiance (GHI) over time, highlighting daily and seasonal patterns for each country.
 
 2. **Correlation Heatmap**:
    ![Correlation Heatmap](correlation_matrix.png)
-   This heatmap visualizes the correlations between key variables, helping identify strong relationships.
+   This heatmap visualizes the correlations between key variables, helping identify strong relationships between different environmental factors.
 
 3. **Wind Rose**:
    ![Wind Rose](wind_rose.png)
-   The wind rose plot shows the distribution of wind speed and direction, crucial for understanding wind patterns.
+   The wind rose plot shows the distribution of wind speed and direction, crucial for understanding wind patterns in each country.
 
 4. **Bubble Chart**:
    ![Bubble Chart](bubble_chart.png)
-   This chart explores the relationship between GHI, temperature, humidity, and wind speed.
+   This chart explores the complex relationship between GHI, temperature, humidity, and wind speed, providing a multi-dimensional view of the data.
+
+These visualizations are crucial for understanding the solar radiation patterns, wind characteristics, and relationships between different environmental variables in Benin, Sierra Leone, and Togo.
 
 ## Recommendations
 
-Based on our analysis, we recommend the following strategies for MoonLight Energy Solutions:
-
-1. **Optimal Locations**: Focus solar installations in areas of Togo that showed consistently high GHI levels. These locations are likely to yield the highest solar energy potential.
-
-2. **Seasonal Planning**: Plan for seasonal variations in energy production. Consider complementary energy sources or storage solutions to maintain consistent energy supply during lower solar radiation periods.
-
-3. **Cleaning Schedule**: Implement a regular cleaning schedule for solar panels. Our analysis shows that regular cleaning significantly improves module efficiency.
-
-4. **Wind Energy Potential**: Explore the possibility of wind energy projects in Togo, where wind patterns are most consistent. This could provide a complementary energy source to solar.
-
-5. **Humidity Considerations**: In high humidity areas, consider using solar panel technologies that perform better in humid conditions. Also, factor in the negative impact of humidity on solar radiation when estimating energy production.
-
-6. **Data Collection Improvements**: Enhance data collection processes to reduce missing values and outliers, particularly for wind speed and solar radiation measurements. This will improve the accuracy of future analyses and predictions.
-
-7. **Continuous Monitoring**: Implement a system for continuous monitoring of environmental factors. This will allow for real-time adjustments and long-term strategy refinement.
+1. **Prioritize Benin**: Focus solar installations in Benin due to highest average and maximum GHI.
+2. **Investigate Togo's Data**: Further examine the unusually low GHI readings in Togo.
+3. **Humidity Considerations**: Account for high humidity in Sierra Leone when planning installations.
+4. **Explore Wind Energy**: Consider wind energy projects in Togo and Benin.
+5. **Optimize for Moderate Radiation**: Design systems for performance under moderate GHI levels.
+6. **Conduct Seasonal Analysis**: Perform detailed temporal analysis to reveal seasonal patterns.
+7. **Improve Data Collection**: Standardize methods across all sites for consistency.
 
 ## Future Work
 
-To further enhance this analysis, we suggest:
-
-1. Incorporating more granular geographical data to pinpoint optimal locations for solar installations.
-2. Conducting a detailed economic analysis to assess the return on investment for solar projects in different areas.
-3. Exploring machine learning models for predicting solar radiation levels based on other environmental factors.
-4. Analyzing the impact of cloud cover and air quality on solar radiation, if such data becomes available.
+1. Investigate reasons for Togo's low GHI readings.
+2. Conduct granular analysis of seasonal and daily solar radiation patterns.
+3. Study humidity impact on solar panel efficiency, especially in Sierra Leone.
+4. Assess potential for hybrid solar-wind projects in Togo and Benin.
+5. Incorporate detailed geographical data for optimal installation locations.
 
 ## Conclusion
 
-This analysis provides MoonLight Energy Solutions with data-driven insights to guide their solar investment strategy. By focusing on high-potential areas, optimizing maintenance schedules, and considering complementary energy sources, the company can significantly enhance its operational efficiency and sustainability. The interactive dashboard we've created will allow for ongoing exploration of the data, supporting adaptive decision-making as new data becomes available.
+This analysis provides MoonLight Energy Solutions with data-driven insights for their solar investment strategy in West Africa. The unexpected variations in solar radiation levels between neighboring countries highlight the importance of localized, data-driven approaches to renewable energy development.
 
+## Interactive Dashboard
+
+Explore our findings through our interactive Streamlit dashboard:
+
+[Solar Radiation Analysis Dashboard](https://solar-10academy.streamlit.app/)
+
+## Getting Started
+
+To run this project locally:
+
+1. Clone the repository
+2. Install required packages: `pip install -r requirements.txt`
+3. Run the Streamlit app: `streamlit run app.py`
+
+## Contributors
+
+- [Kidus Yohannes]

@@ -1,11 +1,13 @@
 import pandas as pd
 import plotly.express as px
 from datetime import timedelta
+import os
 
 def load_data(country):
     """Load cleaned data for a specific country."""
     try:
-        file_path = f'../outputs/{country}/{country}_cleaned_data.csv'
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(base_dir, f'../outputs/{country}/{country}_cleaned_data.csv')
         df = pd.read_csv(file_path, parse_dates=['Timestamp'])
         return df
     except Exception as e:
